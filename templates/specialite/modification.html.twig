@@ -1,0 +1,30 @@
+{% extends "basetemplate.html.twig" %}
+{% block title%}
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+<div>
+    <div class="pull-right">
+        </div>
+        <h1>Modification de la specialite : {{ modificationSpecialite.nom }}</h1>
+        <hr />
+        {{ include('specialite/formulaireSpecialite.html.twig')}}
+        <p>
+        <a href="{{ path('specialite-details', {'id': modificationSpecialite.id}) }}" class="btn btn-default">
+        <i class="glyphicon glyphicon-chevron-left">
+        Retour au détail de la specialite : {{ modificationSpecialite.nom}}
+        </i></a>
+        </p>
+    </div>
+</html>
+
+{% block JS %}
+    {{ parent() }}
+{% endblock %}
+
+{% endblock %}

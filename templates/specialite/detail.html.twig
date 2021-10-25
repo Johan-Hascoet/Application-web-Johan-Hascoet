@@ -1,0 +1,35 @@
+{% extends "basetemplate.html.twig" %}
+{% block title%}
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+<div class="row justify-content-around">
+    <div class="col-10 text-center">
+        <div class="pull-right">
+        </div>
+        
+        <h1 class="my-5">Détails de la spécialité : {{ detailSpecialite.nom }}</h1>
+        <hr class="my-3">
+
+        <div class="row my-5 justify-content-evenly">
+            <div class="col-4 bg-light shadow rounded p-4">
+                <div class="text-center">
+                    <h4>Agents possédant cette spécialité</h4>
+                    <hr class="bg-primary text-primary">
+                </div>
+                <p>{% for agent in detailSpecialite.agent %} - <a href="{{ path('agent-details', {id: agent.id}) }}">{{ agent.nom }} {{ agent.prenom }}</a> <br/>{% else %} Aucun Agents {% endfor %}</p>
+            </div>
+        </div>
+
+        <a href ="{{ path('specialite-modification', {id: detailSpecialite.id}) }}" class ="my-5 btn btn-primary">Modifier spécialité</a>
+
+    </div>
+</div>
+
+</html>
+{% endblock %}

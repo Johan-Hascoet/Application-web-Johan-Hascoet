@@ -1,0 +1,41 @@
+<div>
+<div class="pull-right">
+</div>
+    <div class="well">
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+        
+        {# Les erreurs générales du formulaire #}
+        {{ form_errors(form) }}
+
+        {# Génération manuelle du formulaire #}
+        {# Nom de la spécialité #}
+        <div class="form-group my-5">
+            {# Génération du label #}
+            {{ form_label(form.nom, "Nom de la spécialité", {'label_attr': {'class': 'cal-sm-2 control-label'}}) }}
+            {# Affichage des erreurs pour ce champ précis #}
+            {{ form_errors(form.nom) }}
+            <div>
+                {# Génération de l'input. #}
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        {# Nom de l'agent #}
+        <div class="form-group my-5">
+            {# Génération du label #}
+            {{ form_label(form.agent, "Nom de l'agent", {'label_attr': {'class': 'cal-sm-2 control-label'}}) }}
+            {# Affichage des erreurs pour ce champ précis #}
+            {{ form_errors(form.agent) }}
+            <div>
+                {# Génération de l'input. #}
+                {{ form_widget(form.agent, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <p>
+        {# Génération automatique des champs pas encore écrits #}
+        {{ form_rest(form) }}
+        {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
+        {{ form_widget(form.Sauvegarde, {'attr': {'class': 'btn btn-primary'}}) }}
+        {# Fermeture de la balise <form> de formulaire HTML #}
+        {{ form_end(form) }}
+    </div>
+</html>

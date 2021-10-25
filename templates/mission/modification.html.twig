@@ -1,0 +1,30 @@
+{% extends "basetemplate.html.twig" %}
+{% block title%}
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+<div class="row justify-content-around">
+    <div class="col-10">
+        <div class="pull-right">
+        </div>
+        <h1 class="text-center">Modification de la mission : {{ modificationMission.titre }}</h1>
+        <hr class="my-5">
+
+        {{ include('mission/formulaireMission.html.twig')}}
+
+        <p class="my-5"><a href="{{ path('mission-details', {'id': modificationMission.id}) }}" class="link-secondary text-decoration-none">← Retour</a></p>
+        
+    </div>
+</div>
+</html>
+
+{% block JS %}
+    {{ parent() }}
+{% endblock %}
+
+{% endblock %}

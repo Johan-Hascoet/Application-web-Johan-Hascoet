@@ -1,0 +1,171 @@
+<?php //App__Entity__Nationnalite__CLASSMETADATA__
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Nationnalite',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\Nationnalite',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\NationnaliteRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => null,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => null,
+                        'id' => true,
+                        'columnName' => 'id',
+                    ],
+                    'nomNatio' => [
+                        'fieldName' => 'nomNatio',
+                        'type' => 'string',
+                        'scale' => null,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => null,
+                        'columnName' => 'nom_natio',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'id' => 'id',
+                    'nom_natio' => 'nomNatio',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'id',
+                    'nomNatio' => 'nom_natio',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'nationnalite',
+                ],
+            ],
+            'associationMappings' => [
+                [
+                    'agents' => [
+                        'fieldName' => 'agents',
+                        'mappedBy' => 'Nationnalite',
+                        'targetEntity' => 'App\\Entity\\Agent',
+                        'cascade' => [],
+                        'orphanRemoval' => false,
+                        'fetch' => 2,
+                        'type' => 4,
+                        'inversedBy' => null,
+                        'isOwningSide' => false,
+                        'sourceEntity' => 'App\\Entity\\Nationnalite',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                    ],
+                    'cibles' => [
+                        'fieldName' => 'cibles',
+                        'mappedBy' => 'nationnalite',
+                        'targetEntity' => 'App\\Entity\\Cible',
+                        'cascade' => [],
+                        'orphanRemoval' => false,
+                        'fetch' => 2,
+                        'type' => 4,
+                        'inversedBy' => null,
+                        'isOwningSide' => false,
+                        'sourceEntity' => 'App\\Entity\\Nationnalite',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                    ],
+                    'contacts' => [
+                        'fieldName' => 'contacts',
+                        'mappedBy' => 'nationnalite',
+                        'targetEntity' => 'App\\Entity\\Contact',
+                        'cascade' => [],
+                        'orphanRemoval' => false,
+                        'fetch' => 2,
+                        'type' => 4,
+                        'inversedBy' => null,
+                        'isOwningSide' => false,
+                        'sourceEntity' => 'App\\Entity\\Nationnalite',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                    ],
+                    'Pays' => [
+                        'fieldName' => 'Pays',
+                        'targetEntity' => 'App\\Entity\\Pays',
+                        'joinColumns' => [
+                            [
+                                'name' => 'pays_id',
+                                'referencedColumnName' => 'id',
+                                'unique' => true,
+                            ],
+                        ],
+                        'mappedBy' => null,
+                        'inversedBy' => null,
+                        'cascade' => [
+                            'persist',
+                            'remove',
+                        ],
+                        'orphanRemoval' => false,
+                        'fetch' => 2,
+                        'type' => 1,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\Nationnalite',
+                        'isCascadeRemove' => true,
+                        'isCascadePersist' => true,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'sourceToTargetKeyColumns' => [
+                            'pays_id' => 'id',
+                        ],
+                        'joinColumnFieldNames' => [
+                            'pays_id' => 'pays_id',
+                        ],
+                        'targetToSourceKeyColumns' => [
+                            'id' => 'pays_id',
+                        ],
+                    ],
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

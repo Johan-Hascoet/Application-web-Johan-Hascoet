@@ -1,0 +1,42 @@
+{% extends "basetemplate.html.twig" %}
+{% block title%}
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+<div class="row justify-content-around">
+    <div class="col-10 text-center">
+        <div class="pull-right">
+        </div>
+
+        <h1 class="my-5">Détails du contact : {{ detailContact.nom }} {{ detailContact.prenom }}</h1>
+        <hr class="my-3">
+
+        <div class="row my-5 justify-content-evenly">
+            <div class="col-5 bg-light shadow rounded p-4">
+                <div class="text-center">
+                    <h4>Infos Contact</h4>
+                    <hr class="bg-primary text-primary">
+                </div>
+                <p>Code d'identification : {{ detailContact.nomCode }}</p>
+                <p>Date de naissance : {{ detailContact.DateNaissance|date("Y-m-d") }}</p>
+                <p>Nationnalité : {{ detailContact.nationnalite.nomNatio }}</p>
+            </div>
+            <div class="col-4 bg-light shadow rounded p-4">
+                <div class="text-center">
+                    <h4>Missions</h4>
+                    <hr class="bg-primary text-primary">
+                </div>
+                <p>{% for mission in detailContact.missions %} - <a href="{{ path('mission-details', {id: mission.id}) }}">{{ mission.titre }}</a> <br/>{% else %} Aucune mission {% endfor %}</p>
+            </div>
+        </div>
+
+        <a href ="{{ path('contact-modification', {id: detailContact.id}) }}" class ="my-5 btn btn-primary">Modifier Contact</a>
+    </div>
+</div>
+</html>
+{% endblock %}

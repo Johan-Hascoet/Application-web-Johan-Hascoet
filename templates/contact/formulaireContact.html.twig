@@ -1,0 +1,85 @@
+<div>
+<div class="pull-right">
+</div>
+    <div class="well">
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+        
+        {# Les erreurs générales du formulaire #}
+        {{ form_errors(form) }}
+
+        {# Génération manuelle du formulaire #}
+        {# Nom du contact #}
+        <div class="form-group my-5">
+            {# Génération du label #}
+            {{ form_label(form.nom, "Nom du contact", {'label_attr': {'class': 'cal-sm-2 control-label'}}) }}
+            {# Affichage des erreurs pour ce champ précis #}
+            {{ form_errors(form.nom) }}
+            <div>
+                {# Génération de l'input. #}
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        {# Prénom du contact #}
+        <div class="form-group my-5">
+            {# Génération du label #}
+            {{ form_label(form.prenom, "Prénom du contact", {'label_attr': {'class': 'cal-sm-2 control-label'}}) }}
+            {# Affichage des erreurs pour ce champ précis #}
+            {{ form_errors(form.prenom) }}
+            <div>
+                {# Génération de l'input. #}
+                {{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        {# Date de Naissance du contact #}
+        <div class="form-group my-5">
+            {# Génération du label #}
+            {{ form_label(form.DateNaissance, "Date de naissance du contact", {'label_attr': {'class': 'cal-sm-2 control-label'}}) }}
+            {# Affichage des erreurs pour ce champ précis #}
+            {{ form_errors(form.DateNaissance) }}
+            <div>
+                {# Génération de l'input. #}
+                {{ form_widget(form.DateNaissance, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        {# Code d'identification du contact #}
+        <div class="form-group my-5">
+            {# Génération du label #}
+            {{ form_label(form.nomCode, "Code d'identification du contact", {'label_attr': {'class': 'cal-sm-2 control-label'}}) }}
+            {# Affichage des erreurs pour ce champ précis #}
+            {{ form_errors(form.nomCode) }}
+            <div>
+                {# Génération de l'input. #}
+                {{ form_widget(form.nomCode, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        {# Mission du contact #}
+        <div class="form-group my-5">
+            {# Génération du label #}
+            {{ form_label(form.missions, "Missions disponibles (Optionnel, laissez vide si aucune mission)", {'label_attr': {'class': 'cal-sm-2 control-label'}}) }}
+            {# Affichage des erreurs pour ce champ précis #}
+            {{ form_errors(form.missions) }}
+            <div>
+                {# Génération de l'input. #}
+                {{ form_widget(form.missions, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        {# Nationnalité #}
+        <div class="form-group my-5">
+            {# Génération du label #}
+            {{ form_label(form.nationnalite, "Nationnalité", {'label_attr': {'class': 'cal-sm-2 control-label'}}) }}
+            {# Affichage des erreurs pour ce champ précis #}
+            {{ form_errors(form.nationnalite) }}
+            <div>
+                {# Génération de l'input. #}
+                {{ form_widget(form.nationnalite, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <p>
+        {# Génération automatique des champs pas encore écrits #}
+        {{ form_rest(form) }}
+        {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
+        {{ form_widget(form.Sauvegarde, {'attr': {'class': 'btn btn-primary'}}) }}
+        {# Fermeture de la balise <form> de formulaire HTML #}
+        {{ form_end(form) }}
+    </div>
+</html>

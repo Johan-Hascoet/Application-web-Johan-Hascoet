@@ -1,0 +1,192 @@
+<?php //App__Entity__Agent__CLASSMETADATA__
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Agent',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\Agent',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\AgentRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => null,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => null,
+                        'id' => true,
+                        'columnName' => 'id',
+                    ],
+                    'nom' => [
+                        'fieldName' => 'nom',
+                        'type' => 'string',
+                        'scale' => null,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => null,
+                        'columnName' => 'nom',
+                    ],
+                    'prenom' => [
+                        'fieldName' => 'prenom',
+                        'type' => 'string',
+                        'scale' => null,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => null,
+                        'columnName' => 'prenom',
+                    ],
+                    'DateNaissance' => [
+                        'fieldName' => 'DateNaissance',
+                        'type' => 'date',
+                        'scale' => null,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => null,
+                        'columnName' => 'date_naissance',
+                    ],
+                    'codeIdentification' => [
+                        'fieldName' => 'codeIdentification',
+                        'type' => 'string',
+                        'scale' => null,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => null,
+                        'columnName' => 'code_identification',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'id' => 'id',
+                    'nom' => 'nom',
+                    'prenom' => 'prenom',
+                    'date_naissance' => 'DateNaissance',
+                    'code_identification' => 'codeIdentification',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'id',
+                    'nom' => 'nom',
+                    'prenom' => 'prenom',
+                    'DateNaissance' => 'date_naissance',
+                    'codeIdentification' => 'code_identification',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'agent',
+                ],
+            ],
+            'associationMappings' => [
+                [
+                    'missions' => [
+                        'fieldName' => 'missions',
+                        'joinTable' => [],
+                        'targetEntity' => 'App\\Entity\\Mission',
+                        'mappedBy' => 'Agent',
+                        'inversedBy' => null,
+                        'cascade' => [],
+                        'orphanRemoval' => false,
+                        'fetch' => 2,
+                        'type' => 8,
+                        'isOwningSide' => false,
+                        'sourceEntity' => 'App\\Entity\\Agent',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                    ],
+                    'Nationnalite' => [
+                        'fieldName' => 'Nationnalite',
+                        'joinColumns' => [
+                            [
+                                'name' => 'nationnalite_id',
+                                'unique' => false,
+                                'nullable' => false,
+                                'onDelete' => null,
+                                'columnDefinition' => null,
+                                'referencedColumnName' => 'id',
+                            ],
+                        ],
+                        'cascade' => [],
+                        'inversedBy' => 'agents',
+                        'targetEntity' => 'App\\Entity\\Nationnalite',
+                        'fetch' => 2,
+                        'type' => 2,
+                        'mappedBy' => null,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\Agent',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'sourceToTargetKeyColumns' => [
+                            'nationnalite_id' => 'id',
+                        ],
+                        'joinColumnFieldNames' => [
+                            'nationnalite_id' => 'nationnalite_id',
+                        ],
+                        'targetToSourceKeyColumns' => [
+                            'id' => 'nationnalite_id',
+                        ],
+                        'orphanRemoval' => false,
+                    ],
+                    'specialites' => [
+                        'fieldName' => 'specialites',
+                        'joinTable' => [],
+                        'targetEntity' => 'App\\Entity\\Specialite',
+                        'mappedBy' => 'agent',
+                        'inversedBy' => null,
+                        'cascade' => [],
+                        'orphanRemoval' => false,
+                        'fetch' => 2,
+                        'type' => 8,
+                        'isOwningSide' => false,
+                        'sourceEntity' => 'App\\Entity\\Agent',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                    ],
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

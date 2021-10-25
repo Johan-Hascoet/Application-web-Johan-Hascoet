@@ -1,0 +1,44 @@
+{% extends "basetemplate.html.twig" %}
+{% block title%}
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+<div class="row justify-content-around">
+    <div class="col-10 text-center">
+        <div class="pull-right">
+        </div>
+        
+        <h1 class="my-5">Détails de l'agent : {{ detailAgent.nom }} {{ detailAgent.prenom }}</h1>
+        <hr class="my-3">
+
+        <div class="row my-5 justify-content-evenly">
+            <div class="col-5 bg-light shadow rounded p-4">
+                <div class="text-center">
+                    <h4>Infos Agent</h4>
+                    <hr class="bg-primary text-primary">
+                </div>
+                <p>Code d'identification : {{ detailAgent.codeIdentification }}</p>
+                <p>Date de naissance : {{ detailAgent.DateNaissance|date("Y-m-d") }}</p>
+                <p>Nationnalité : {{ detailAgent.Nationnalite.nomNatio }}</p>
+            </div>
+            <div class="col-4 bg-light shadow rounded p-4">
+                <div class="text-center">
+                    <h4>Etat</h4>
+                    <hr class="bg-primary text-primary">
+                </div>
+                <p>Specialitées : {% for specialite in detailAgent.specialites %} {{ specialite.nom }} {% endfor %}</p>
+                <p>Missions de l'agent : {% for mission in detailAgent.missions %} - <a href="{{ path('mission-details', {id: mission.id}) }}" class="text-decoration-none link-primary">{{ mission.titre }}</a> <br/>{% else %} Aucune mission {% endfor %}</p>
+            </div>
+        </div>
+
+        <a href ="{{ path('agent-modification', {id: detailAgent.id}) }}" class ="my-5 btn btn-primary">Modifier Agent</a>
+        
+    </div>
+</div>
+</html>
+{% endblock %}
